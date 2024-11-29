@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import requests
 from PIL import Image
 from io import BytesIO
+
 # Constants for sound thresholds (in decibels)
 HUMAN_THRESHOLD = 85
 BABY_THRESHOLD = 70
