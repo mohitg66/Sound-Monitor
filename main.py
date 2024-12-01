@@ -163,6 +163,7 @@ if st.session_state["logged_in_user"]:
                 # st.error("Dangerous noise levels detected!")
                 if is_quiet_hour():
                     st.markdown("<span style='color:red;'>Noise detected during restricted hours!</span>", unsafe_allow_html=True)
+                st.toast("Report the noise disturbance by going to the 'Report Disturbance' tab")
             else:
                 st.success("Sound levels are within safe limits.")
 
