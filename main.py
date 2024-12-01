@@ -8,7 +8,7 @@ from io import BytesIO
 import requests
 import time
 # import plotly.express as px
-import soundfile as sf
+# import soundfile as sf
 import io
 
 # Constants for sound thresholds (in decibels)
@@ -73,7 +73,7 @@ def is_quiet_hour():
 
 def detect_frequency(audio_data):
     # Detects sound from the microphone and performs FFT to calculate amplitude vs frequency.
-    audio_data, sample_rate = sf.read(io.BytesIO(audio_data.getvalue()))
+    audio_data, sample_rate = np.frombuffer(audio_data, dtype=np.int16), 44100
     
     # Perform FFT on the audio data to convert it from time domain to frequency domain
     fft_data = np.abs(np.fft.fft(audio_data.flatten()))  # FFT of the audio data
