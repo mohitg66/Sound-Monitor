@@ -73,7 +73,7 @@ def is_quiet_hour():
 
 def detect_frequency(audio_data):
     # Detects sound from the microphone and performs FFT to calculate amplitude vs frequency.
-    audio_data, sample_rate = np.frombuffer(audio_data, dtype=np.int16), 44100
+    audio_data, sample_rate = np.frombuffer(audio_data.read(), dtype=np.int16), 44100
     
     # Perform FFT on the audio data to convert it from time domain to frequency domain
     fft_data = np.abs(np.fft.fft(audio_data.flatten()))  # FFT of the audio data
